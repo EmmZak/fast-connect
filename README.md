@@ -1,24 +1,7 @@
 # fast-contact
 
-## Project setup
-```
-npm install
-```
+Site vitrine du projet + Simulator
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Simulation Design
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+https://www.figma.com/file/HtY0xq15D3LNxVhfg37kjQ/Security4Elder?node-id=0%3A1

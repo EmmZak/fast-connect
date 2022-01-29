@@ -53,3 +53,13 @@ export default {
   }),
 };
 </script>
+
+<style>
+.full-height {
+  height: 100%;
+}
+
+.full-width {
+  width: 100%;
+}
+</style>
