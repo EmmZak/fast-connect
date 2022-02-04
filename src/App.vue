@@ -62,4 +62,8 @@ export default {
 .full-width {
   width: 100%;
 }
+
+.title-font {
+  font-family: "Open Sans", sans-serif;
+}
 </style>
