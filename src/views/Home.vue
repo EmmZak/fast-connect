@@ -30,6 +30,7 @@
         <Phone />
       </v-col> -->
     </v-row>
+    block {{block}}
   </v-container>
 </template>
 
@@ -46,6 +47,7 @@ export default {
   },
   data() {
     return {
+      block: false,
       sosNotif: false,
       notifText: "default",
       phone1: {
@@ -60,32 +62,71 @@ export default {
   },
   methods: {
     call(event) {
+      if (this.block) {
+        return;
+      }
+      this.block = true;
       console.log("call fired", event);
       if (event == "Emmanuel") {
         this.phone1.call = true;
       } else {
         this.phone2.call = true;
       }
+
+      let audio = new Audio(require("./../../public/call-12.mp3"));
+      audio.play();
+
       setTimeout(() => {
         if (event == "Emmanuel") {
           this.phone1.call = false;
         } else {
           this.phone2.call = false;
         }
-      }, 5000);
+        this.block = false;
+        audio.stop();
+      }, 12000);
     },
     sos() {
-      this.sosNotif = true
+      if (this.block) {
+        return;
+      }
+      this.block = true;
+
+      this.sosNotif = true;
+
+      let audio = new Audio(require("./../../public/notif.mp3"));
+      audio.play();
+
+      setTimeout(() => {
+        this.sosNotif = false;
+        this.block = false;
+        audio.stop();
+      }, 5000);
     },
     notif(event) {
-      console.log("event", event)
+      if (this.block) {
+        return;
+      }
+      this.block = true;
+
+      console.log("event", event);
       if (event == "ok") {
         this.notifText = "Salut, tout va bien";
       } else {
         this.notifText = "Salut, j'ai un souci";
       }
+
+      let audio = new Audio(require("./../../public/notif.mp3"));
+      audio.play();
+
       this.phone1.notif = true;
       this.phone2.notif = true;
+      setTimeout(() => {
+        this.phone1.notif = false;
+        this.phone2.notif = false;
+        this.block = false;
+        //audio.stop();
+      }, 5000);
     },
   },
 };

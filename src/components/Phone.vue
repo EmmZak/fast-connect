@@ -28,7 +28,7 @@
           <Notification v-if="this.notif" :message="notifText" />
         </v-row>
         <v-row class="fill-height">
-          <Call v-if="this.call" />
+          <PhoneCall v-if="this.call" />
         </v-row>
       </v-card-text>
     </v-card>
@@ -39,7 +39,7 @@
 /* eslint-disable vue/no-unused-components */
 import SOSNotification from "./SOSNotification.vue";
 import Notification from "./Notification.vue";
-import Call from "./Call.vue";
+import PhoneCall from "./PhoneCall.vue";
 
 export default {
   name: "Phone",
@@ -47,7 +47,7 @@ export default {
   components: {
     SOSNotification,
     Notification,
-    Call,
+    PhoneCall,
   },
   data() {
     return {

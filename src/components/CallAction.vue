@@ -16,7 +16,7 @@
     </v-card-text>
     <v-card-actions class="pa-0 justify-center">
       <div class="text-body-2 white--text">
-        <span class="title-font"> Répondre </span>
+        <span class="title-font"> {{text}} </span>
       </div>
     </v-card-actions>
   </v-card>
@@ -39,6 +39,13 @@ export default {
         return "green";
       } else {
         return "red";
+      }
+    },
+    text() {
+      if (this.type == "accept") {
+        return "Répondre";
+      } else {
+        return "Refuser";
       }
     },
   },

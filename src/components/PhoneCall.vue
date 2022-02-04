@@ -1,8 +1,8 @@
 <template>
   <v-row class="full-height grey"  no-gutters align="center">
     <v-col cols="12" class="text-center">
-      <div class="text-h5">
-        <span class="title-font"> Mme Dupont </span>
+      <div class="text-h4 white--text">
+        <span class="title-font"> Dispositif </span>
       </div>
     </v-col>
     <v-col cols="12" class="">

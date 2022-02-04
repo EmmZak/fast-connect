@@ -1,0 +1,6 @@
+npm run build
+
+cp firebase.json dist
+cp .firebaserc dist 
+
+firebase deploy --only hosting
