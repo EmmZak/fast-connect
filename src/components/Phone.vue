@@ -1,32 +1,34 @@
 <template>
   <div>
-    <v-card width="250px" height="500px" class=" rounded-lg">
+    <v-card width="250px" height="500px" class="rounded-lg">
       <!-- screen -->
       <!-- <div class="pa-2 green">
         <div class="pa-1 yellow">ok</div>
       </div> -->
 
-      <v-card-text class="blue full-height">
+      <v-card-text class="grey darken-4 full-height">
         <v-row
-          class="purple fill-height pa-0"
+          class="pa-0"
+          style="height: 50%"
           justify="center"
           align="center"
           no-gutters
-          v-if="true"
+          v-if="!this.call"
         >
-          <div class="fill-height">
-            <div class="title-font white--text text-h4">
+          <v-col class="text-center">
+            <div class="title-font white--text text-h3">
               <div class="title-font">{{ time }}</div>
             </div>
             <div class="title-font white--text text-h5">
               <div class="title-font">{{ date }}</div>
             </div>
-          </div>
+          </v-col>
 
-          <Notification :message="notification.text" />
+          <SOSNotification v-if="this.sosNotif" />
+          <Notification v-if="this.notif" :message="notifText" />
         </v-row>
-        <v-row v-if="false" class="fill-height">
-          <Call v-if="true" />
+        <v-row class="fill-height">
+          <Call v-if="this.call" />
         </v-row>
       </v-card-text>
     </v-card>
@@ -35,12 +37,15 @@
 
 <script>
 /* eslint-disable vue/no-unused-components */
+import SOSNotification from "./SOSNotification.vue";
 import Notification from "./Notification.vue";
 import Call from "./Call.vue";
 
 export default {
   name: "Phone",
+  props: ["notif", "notifText", "sosNotif", "call"],
   components: {
+    SOSNotification,
     Notification,
     Call,
   },
