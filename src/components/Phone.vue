@@ -1,6 +1,7 @@
 <template>
   <v-card
     width="90%"
+    min-width="160px"
     max-width="300px"
     min-height="300px"
     height="100%"
