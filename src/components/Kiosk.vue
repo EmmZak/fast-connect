@@ -1,6 +1,6 @@
 <template>
   <!-- <KioskCall v-if="false" /> -->
-  <v-card width="100%" style="height: 100%" class="rounded-lg">
+  <v-card width="100%" style="height: 100%; border: solid 7px grey" class="rounded-lg kiosk" >
     <v-card-text class="">
       <v-row justify="space-around" no-gutters>
         <v-col cols="4" class="text-center" @click="$emit('notif', 'ok')">
@@ -88,4 +88,10 @@ export default {
 </script>
 
 <style>
+
+.kiosk {
+  border: solid 10px blue;
+  background-color: rgb(211, 210, 210);
+}
+
 </style>

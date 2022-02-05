@@ -4,19 +4,22 @@
     max-width="300px"
     min-height="300px"
     height="100%"
-    class="rounded-lg"
+    style="
+      border-radius: 15px;
+      border: solid 7px black;
+      background: linear-gradient(#e66465, #9198e5);
+    "
   >
-    <v-card-text class="grey darken-4 full-height pa-2">
+    <v-card-text class="darken-4 full-height pa-2">
       <v-row
-
-        class="pa-0 "
+        class="pa-0"
         style="height: 50"
         justify=""
         align=""
         no-gutters
         v-if="!this.call"
       >
-        <v-col class="text-center" style="padding-top: 30%">
+        <v-col class="text-center" style="padding-top: 30%; padding-bottom: 15%">
           <div class="title-font white--text">
             <div class="title-font" :style="{ fontSize: timeFontSize + 'px' }">
               {{ time }}
@@ -32,7 +35,7 @@
         <SOSNotification v-if="this.sosNotif" />
         <Notification v-if="this.notif" :message="notifText" />
       </v-row>
-      <v-row v-if="false" class="fill-height">
+      <v-row v-if="true" class="fill-height">
         <PhoneCall v-if="this.call" />
       </v-row>
     </v-card-text>
@@ -59,7 +62,7 @@ export default {
         textOK: "Salut, j'ai un souci",
         textKO: "Salut, tout va bien",
         text: "Salut, j'ai un souci",
-      }
+      },
     };
   },
   computed: {
@@ -73,7 +76,7 @@ export default {
         month: "long",
         day: "numeric",
       });
-      return date
+      return date;
     },
     timeFontSize() {
       switch (this.$vuetify.breakpoint.name) {

@@ -1,7 +1,7 @@
 <template>
   <v-container class="" fluid>
     <v-row v-if="true" justify="space-around" class="hidden-md-and-up">
-      <v-col md="12" sm="12" cols="12" class="purple">
+      <v-col md="12" sm="12" cols="12" class="">
         <Kiosk @call="call" @sos="sos" @notif="notif" />
       </v-col>
       <v-col md="6" sm="4" cols="6" class="">
@@ -62,7 +62,7 @@ export default {
   data() {
     return {
       block: false,
-      sosNotif: true,
+      sosNotif: false,
       notifText: "Salut, j'ai un souci",
       phone1: {
         notif: false,

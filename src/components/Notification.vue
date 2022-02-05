@@ -1,18 +1,19 @@
 <template>
   <v-row
-    class="rounded-sm grey"
+    class="rounded-sm white"
     justify="space-between"
     align="center"
     no-gutters
+    style="opacity: 80%"
   >
     <v-col cols="2" class="text-centerr pa-0">
-      <v-icon class="yellow--text" :size="iconFontSize">mdi-account-box</v-icon>
+      <v-icon class="green--text" :size="iconFontSize">mdi-account-box</v-icon>
     </v-col>
     <v-col cols="9" class="pa-0">
       <v-row class="pa-0" no-gutters>
         <v-col class=" text-left" cols="12">
           <div
-            class="white--text"
+            class="black--text"
             :style="{ fontSize: titleFontSize + 'px' }"
           >
             Dispositif
@@ -20,7 +21,7 @@
         </v-col>
         <v-col cols="12" class="text-left">
           <div
-            class="white--text"
+            class="black--text"
             :style="{ fontSize: messageFontSize + 'px' }"
           >
             {{ text }}

@@ -1,9 +1,10 @@
 <template>
   <v-row
-    class="rounded-sm grey"
+    class="rounded-sm white"
     justify="space-between"
     align="center"
     no-gutters
+    style="opacity: 80%"
   >
     <v-col cols="2" class="text-center pa-0">
       <v-icon class="red--text" :size="iconFontSize">mdi-alert-circle</v-icon>
@@ -11,13 +12,14 @@
     <v-col cols="9" class="pa-0">
       <v-row class="pa-0" no-gutters>
         <v-col class="text-left" cols="12">
-          <div class="white--text" :style="{ fontSize: titleFontSize + 'px' }">
+          <div class="black--text" :style="{ fontSize: titleFontSize + 'px' }">
             Dispositif
           </div>
         </v-col>
-        <v-col class="text-left" cols="12">
+        <v-col class="text-left" cols="12" style="padding-top: 2%">
           <div
-            class="pa-0 white--text"
+            class="pa-0 black--text"
+            style="line-height: 1.3; letter-spacing: 0"
             :style="{ fontSize: messageFontSize + 'px' }"
           >
             Adresse - 12 rue de l'Yser, Numéro sécu - 98765435678

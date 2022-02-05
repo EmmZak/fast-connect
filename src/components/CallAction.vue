@@ -4,19 +4,21 @@
       <v-row class="space-around" no-gutters>
         <v-col cols="">
           <v-icon
-            x-large
             style="border-radius: 30px"
             class="pa-2"
             :class="color"
             color="white"
+            :size="iconSize"
             >{{ icon }}</v-icon
           >
         </v-col>
       </v-row>
     </v-card-text>
-    <v-card-actions class="pa-0 justify-center">
+    <v-card-actions class="pa-0 pt-2 justify-center">
       <div class="text-body-2 white--text">
-        <span class="title-font"> {{text}} </span>
+        <span class="title-font" :style="{ fontSize: textFontSize + 'px' }">
+          {{ text }}
+        </span>
       </div>
     </v-card-actions>
   </v-card>
@@ -25,7 +27,7 @@
 <script>
 export default {
   name: "CallAction",
-  props: ["type"],
+  props: ["textFontSize", "iconFontSize", "type"],
   computed: {
     icon() {
       if (this.type == "accept") {
