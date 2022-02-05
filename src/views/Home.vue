@@ -4,7 +4,7 @@
       <v-col md="12" sm="12" cols="12" class="purple">
         <Kiosk @call="call" @sos="sos" @notif="notif" />
       </v-col>
-      <v-col md="6" sm="4" cols="6" class="red">
+      <v-col md="6" sm="4" cols="6" class="">
         <Phone
           :notif="phone1.notif"
           :notifText="notifText"
@@ -23,7 +23,7 @@
     </v-row>
 
     <v-row justify="center" class="hidden-sm-and-down text-center">
-      <v-col  class="red">
+      <v-col  class="">
         <Phone
           v-if="true"
           :notif="phone1.notif"
@@ -32,10 +32,10 @@
           :call="phone1.call"
         />
       </v-col>
-      <v-col xl="7" lg="7" md="7" class="green">
+      <v-col xl="7" lg="7" md="7" class="">
         <Kiosk @call="call" @sos="sos" @notif="notif" />
       </v-col>
-      <v-col  class="yellow">
+      <v-col  class="">
         <Phone
           v-if="true"
           :notif="phone2.notif"
@@ -62,10 +62,10 @@ export default {
   data() {
     return {
       block: false,
-      sosNotif: false,
+      sosNotif: true,
       notifText: "Salut, j'ai un souci",
       phone1: {
-        notif: true,
+        notif: false,
         call: false,
       },
       phone2: {

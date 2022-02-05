@@ -16,7 +16,7 @@
         no-gutters
         v-if="!this.call"
       >
-        <v-col class="text-center" style="padding-top: 40%">
+        <v-col class="text-center" style="padding-top: 30%">
           <div class="title-font white--text">
             <div class="title-font" :style="{ fontSize: timeFontSize + 'px' }">
               {{ time }}
