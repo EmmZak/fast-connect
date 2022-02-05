@@ -10,9 +10,9 @@
       background: linear-gradient(#e66465, #9198e5);
     "
   >
-    <v-card-text class="darken-4 full-height pa-2">
+    <v-card-text class="darken-4 full-height pa-0">
       <v-row
-        class="pa-0"
+        class="pa-1"
         style="height: 50"
         justify=""
         align=""

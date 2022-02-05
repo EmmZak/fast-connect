@@ -65,7 +65,7 @@ export default {
       sosNotif: false,
       notifText: "Salut, j'ai un souci",
       phone1: {
-        notif: false,
+        notif: true,
         call: false,
       },
       phone2: {

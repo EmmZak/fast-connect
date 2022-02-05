@@ -1,35 +1,66 @@
 <template>
-  <v-row
-    class="rounded-sm white"
-    justify="space-between"
-    align="center"
-    no-gutters
-    style="opacity: 80%"
-  >
-    <v-col cols="2" class="text-centerr pa-0">
-      <v-icon class="green--text" :size="iconFontSize">mdi-account-box</v-icon>
-    </v-col>
-    <v-col cols="9" class="pa-0">
-      <v-row class="pa-0" no-gutters>
-        <v-col class=" text-left" cols="12">
-          <div
-            class="black--text"
-            :style="{ fontSize: titleFontSize + 'px' }"
-          >
-            Dispositif
-          </div>
-        </v-col>
-        <v-col cols="12" class="text-left">
-          <div
-            class="black--text"
-            :style="{ fontSize: messageFontSize + 'px' }"
-          >
-            {{ text }}
-          </div>
-        </v-col>
-      </v-row>
-    </v-col>
-  </v-row>
+  <div class="" style="width: 100%">
+    <!-- other screens -->
+    <v-row
+      class="rounded-sm white "
+      justify="space-between"
+      align="center"
+      no-gutters
+      style="opacity: 80%"
+    >
+      <v-col cols="2" class="text-centerr pa-0">
+        <v-icon class="green--text" :size="iconFontSize"
+          >mdi-account-box</v-icon
+        >
+      </v-col>
+      <v-col cols="9" class="pa-0">
+        <v-row class="pa-0" no-gutters>
+          <v-col class="text-left" cols="12">
+            <div
+              class="black--text"
+              :style="{ fontSize: titleFontSize + 'px' }"
+            >
+              Dispositif
+            </div>
+          </v-col>
+          <v-col cols="12" class="text-left">
+            <div
+              class="black--text"
+              :style="{ fontSize: messageFontSize + 'px' }"
+            >
+              {{ text }}
+            </div>
+          </v-col>
+        </v-row>
+      </v-col>
+    </v-row>
+
+    <!-- notif for mobile -->
+    <v-row
+      v-if="false"
+      class="rounded-sm white hidden-sm-and-up"
+      justify="space-between"
+      align="center"
+      no-gutters
+      style="opacity: 80%"
+    >
+      <v-col cols="2" class="text-centerr pa-0">
+        <v-icon class="green--text" :size="iconFontSize"
+          >mdi-account-box</v-icon
+        >
+      </v-col>
+      <v-col cols="7">
+        <div class="black--text" :style="{ fontSize: titleFontSize + 'px' }">
+          Dispositif
+        </div>
+      </v-col>
+      <v-col cols="12">
+        <div class="black--text text-center" :style="{ fontSize: messageFontSize + 'px' }">
+          {{ text }}
+        </div>
+      </v-col>
+    </v-row>
+  </div>
 </template>
 
 <script>
@@ -38,15 +69,13 @@ export default {
   props: ["message"],
   computed: {
     text() {
-      let str = `${new Date().toLocaleString().split(",")[1]} - ${
-        this.message
-      }`;
-      return str;
+      let date = new Date();
+      return `${date.getHours()}:${date.getMinutes()} - ${this.message}`;
     },
     iconFontSize() {
       switch (this.$vuetify.breakpoint.name) {
         case "xs":
-          return 40;
+          return 35;
         case "sm":
           return 45;
         case "md":

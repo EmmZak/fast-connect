@@ -35,10 +35,8 @@ export default {
   name: "SOSNotification",
   computed: {
     text() {
-      let str = `${new Date().toLocaleString().split(",")[1]} - ${
-        this.message
-      }`;
-      return str;
+      let date = new Date()
+      return `${date.getHours()}:${date.getMinutes()} - ${this.message}`
     },
     iconFontSize() {
       switch (this.$vuetify.breakpoint.name) {
