@@ -1,19 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar app color="primary" dark>
-      <div class="text-h5"><span class="title-font">FASTContact</span></div>
-
-      <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
-    </v-app-bar>
-
+    <Header />
     <v-main>
       <router-view />
     </v-main>
@@ -21,9 +8,11 @@
 </template>
 
 <script>
+import Header from "./components/Header.vue";
+
 export default {
   name: "App",
-
+  components: { Header },
   data: () => ({
     //
   }),

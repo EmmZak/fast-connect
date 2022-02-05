@@ -9,7 +9,7 @@
       style="opacity: 80%"
     >
       <v-col cols="2" class="text-centerr pa-0">
-        <v-icon class="green--text" :size="iconFontSize"
+        <v-icon :color="iconColor" :size="iconFontSize"
           >mdi-account-box</v-icon
         >
       </v-col>
@@ -68,6 +68,9 @@ export default {
   name: "Notification",
   props: ["message"],
   computed: {
+    iconColor(){
+      return this.message.includes('souci') ? 'orange': 'green'
+    },
     text() {
       let date = new Date();
       return `${date.getHours()}:${date.getMinutes()} - ${this.message}`;

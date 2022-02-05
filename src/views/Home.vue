@@ -97,7 +97,6 @@ export default {
           this.phone2.call = false;
         }
         this.block = false;
-        audio.stop();
       }, 12000);
     },
     sos() {
