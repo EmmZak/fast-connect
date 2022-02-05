@@ -1,10 +1,10 @@
 <template>
   <v-container class="" fluid>
-    <v-row v-if="true" justify="center" class="hidden-md-and-up">
+    <v-row v-if="true" justify="space-around" class="hidden-md-and-up">
       <v-col md="12" sm="12" cols="12" class="purple">
         <Kiosk @call="call" @sos="sos" @notif="notif" />
       </v-col>
-      <v-col md="6" sm="6" cols="6" class="red">
+      <v-col md="6" sm="4" cols="6" class="red">
         <Phone
           :notif="phone1.notif"
           :notifText="notifText"
@@ -12,7 +12,7 @@
           :call="phone1.call"
         />
       </v-col>
-      <v-col md="6" sm="6" cols="6" class="">
+      <v-col md="6" sm="4" cols="6" class="">
         <Phone
           :notif="phone2.notif"
           :notifText="notifText"
@@ -25,6 +25,7 @@
     <v-row justify="center" class="hidden-sm-and-down text-center">
       <v-col  class="red">
         <Phone
+          v-if="true"
           :notif="phone1.notif"
           :notifText="notifText"
           :sosNotif="sosNotif"
@@ -36,6 +37,7 @@
       </v-col>
       <v-col  class="yellow">
         <Phone
+          v-if="true"
           :notif="phone2.notif"
           :notifText="notifText"
           :sosNotif="sosNotif"

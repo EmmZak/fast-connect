@@ -1,6 +1,5 @@
 <template>
-  <v-card width="90%" max-width="400px" min-height="300px" height="100%" class="rounded-lg">
-
+  <v-card width="90%" max-width="300px" min-height="300px" height="100%" class="rounded-lg">
     <v-card-text class="grey darken-4 full-height">
       <v-row
         class="pa-0"

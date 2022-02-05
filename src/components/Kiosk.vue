@@ -1,6 +1,6 @@
 <template>
   <!-- <KioskCall v-if="false" /> -->
-  <v-card width="95%" style="height: 100%" class="rounded-lg">
+  <v-card width="100%" style="height: 100%" class="rounded-lg">
     <v-card-text class="">
       <v-row justify="space-around" no-gutters>
         <v-col cols="4" class="text-center" @click="$emit('notif', 'ok')">
@@ -64,7 +64,7 @@ export default {
         case "lg":
           return 235;
         case "xl":
-          return 700;
+          return 300;
       }
       return null;
     },
