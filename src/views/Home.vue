@@ -1,36 +1,48 @@
 <template>
   <v-container class="" fluid>
-    <v-row justify="center">
-      <div class="">
+    <v-row v-if="true" justify="center" class="hidden-md-and-up">
+      <v-col md="12" sm="12" cols="12" class="purple">
+        <Kiosk @call="call" @sos="sos" @notif="notif" />
+      </v-col>
+      <v-col md="6" sm="6" cols="6" class="red">
         <Phone
           :notif="phone1.notif"
           :notifText="notifText"
           :sosNotif="sosNotif"
           :call="phone1.call"
         />
-      </div>
-      <div class="pa-2"></div>
-      <div>
-        <Kiosk @call="call" @sos="sos" @notif="notif" />
-      </div>
-      <div class="pa-2"></div>
-      <div class="">
+      </v-col>
+      <v-col md="6" sm="6" cols="6" class="">
         <Phone
           :notif="phone2.notif"
           :notifText="notifText"
           :sosNotif="sosNotif"
           :call="phone2.call"
         />
-      </div>
-      <!-- <v-col class="red" cols="3">
-        <Phone />
       </v-col>
-      <v-col class="green" cols="6"></v-col>
-      <v-col class="red" cols="3">
-        <Phone />
-      </v-col> -->
     </v-row>
-    block {{block}}
+
+    <v-row justify="center" class="hidden-sm-and-down text-center">
+      <v-col  class="red">
+        <Phone
+          :notif="phone1.notif"
+          :notifText="notifText"
+          :sosNotif="sosNotif"
+          :call="phone1.call"
+        />
+      </v-col>
+      <v-col xl="7" lg="7" md="7" class="green">
+        <Kiosk @call="call" @sos="sos" @notif="notif" />
+      </v-col>
+      <v-col  class="yellow">
+        <Phone
+          :notif="phone2.notif"
+          :notifText="notifText"
+          :sosNotif="sosNotif"
+          :call="phone2.call"
+        />
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
