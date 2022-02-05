@@ -1,27 +1,38 @@
 <template>
-  <v-card width="90%" max-width="300px" min-height="300px" height="100%" class="rounded-lg">
-    <v-card-text class="grey darken-4 full-height">
+  <v-card
+    width="90%"
+    max-width="300px"
+    min-height="300px"
+    height="100%"
+    class="rounded-lg"
+  >
+    <v-card-text class="grey darken-4 full-height pa-2">
       <v-row
-        class="pa-0"
-        style="height: 50%"
-        justify="center"
-        align="center"
+
+        class="pa-0 "
+        style="height: 50"
+        justify=""
+        align=""
         no-gutters
         v-if="!this.call"
       >
-        <v-col class="text-center">
-          <div class="title-font white--text text-h3">
-            <div class="title-font">{{ time }}</div>
+        <v-col class="text-center" style="padding-top: 40%">
+          <div class="title-font white--text">
+            <div class="title-font" :style="{ fontSize: timeFontSize + 'px' }">
+              {{ time }}
+            </div>
           </div>
-          <div class="title-font white--text text-h5">
-            <div class="title-font">{{ date }}</div>
+          <div class="title-font white--text text-h5" style="padding-top: 5%">
+            <div class="title-font" :style="{ fontSize: dateFontSize + 'px' }">
+              {{ date }}
+            </div>
           </div>
         </v-col>
 
         <SOSNotification v-if="this.sosNotif" />
         <Notification v-if="this.notif" :message="notifText" />
       </v-row>
-      <v-row class="fill-height">
+      <v-row v-if="false" class="fill-height">
         <PhoneCall v-if="this.call" />
       </v-row>
     </v-card-text>
@@ -48,15 +59,51 @@ export default {
         textOK: "Salut, j'ai un souci",
         textKO: "Salut, tout va bien",
         text: "Salut, j'ai un souci",
-      },
+      }
     };
   },
   computed: {
     time() {
-      return new Date().toLocaleString().split(", ")[1];
+      let date = new Date();
+      return date.getHours() + ":" + date.getMinutes();
     },
     date() {
-      return new Date().toLocaleString().split(", ")[0];
+      let date = new Date().toLocaleDateString("fr-FR", {
+        weekday: "long",
+        month: "long",
+        day: "numeric",
+      });
+      return date
+    },
+    timeFontSize() {
+      switch (this.$vuetify.breakpoint.name) {
+        case "xs":
+          return 30;
+        case "sm":
+          return 32;
+        case "md":
+          return 32;
+        case "lg":
+          return 38;
+        case "xl":
+          return 42;
+      }
+      return null;
+    },
+    dateFontSize() {
+      switch (this.$vuetify.breakpoint.name) {
+        case "xs":
+          return 13;
+        case "sm":
+          return 16;
+        case "md":
+          return 14;
+        case "lg":
+          return 18;
+        case "xl":
+          return 22;
+      }
+      return null;
     },
   },
 };

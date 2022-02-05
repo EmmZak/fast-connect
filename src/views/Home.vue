@@ -63,9 +63,9 @@ export default {
     return {
       block: false,
       sosNotif: false,
-      notifText: "default",
+      notifText: "Salut, j'ai un souci",
       phone1: {
-        notif: false,
+        notif: true,
         call: false,
       },
       phone2: {
