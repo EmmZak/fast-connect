@@ -8,7 +8,7 @@
             class="pa-2"
             :class="color"
             color="white"
-            :size="iconSize"
+            :size="iconFontSize"
             >{{ icon }}</v-icon
           >
         </v-col>

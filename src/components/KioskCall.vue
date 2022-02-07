@@ -1,5 +1,5 @@
 <template>
-  <v-card elevation="5" width="75%" height="50%">
+  <v-card style="z-index: 9999" elevation="5" width="75%" height="50%">
     <v-card-text> Appel en cours ... </v-card-text>
     <v-card-actions class="justify-center">
       <div class="text-center blue" style="width: 75%">

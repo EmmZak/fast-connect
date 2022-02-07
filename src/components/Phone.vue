@@ -1,7 +1,7 @@
 <template>
   <v-card
-    width="90%"
-    min-width="160px"
+    width="100%"
+    min-width="130px"
     max-width="300px"
     min-height="300px"
     height="100%"
@@ -10,13 +10,12 @@
       border: solid 7px black;
       background: linear-gradient(#e66465, #9198e5);
     "
+    class="pa-0"
   >
     <v-card-text class="darken-4 full-height pa-0">
       <v-row
         class="pa-1"
         style="height: 50"
-        justify=""
-        align=""
         no-gutters
         v-if="!this.call"
       >
@@ -69,7 +68,7 @@ export default {
   computed: {
     time() {
       let date = new Date();
-      return date.getHours() + ":" + date.getMinutes();
+      return date.toTimeString().slice(0, 5)
     },
     date() {
       let date = new Date().toLocaleDateString("fr-FR", {

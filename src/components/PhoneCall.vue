@@ -1,5 +1,5 @@
 <template>
-  <v-row class="full-height" no-gutters align="center">
+  <v-row class="full-height" align="center" no-gutters>
     <v-col cols="12" class="text-center">
       <div class="text-h4 white--text">
         <div class="title-font" :style="{ fontSize: titleFontSize + 'px' }">
@@ -8,15 +8,15 @@
       </div>
     </v-col>
     <v-col cols="12" class="">
-      <v-row justify="space-around" no-gutters>
-        <v-col cols="6" class="">
+      <v-row justify="space-around" class="" no-gutters>
+        <v-col cols="4" class="pa-0">
           <CallAction
             :textFontSize="textFontSize"
             :iconFontSize="iconFontSize"
             type="accept"
           />
         </v-col>
-        <v-col cols="6" class="">
+        <v-col cols="4" class="pa-0">
           <CallAction
             :textFontSize="textFontSize"
             :iconFontSize="iconFontSize"
@@ -38,13 +38,13 @@ export default {
     iconFontSize() {
       switch (this.$vuetify.breakpoint.name) {
         case "xs":
-          return 30;
+          return 20;
         case "sm":
-          return 45;
+          return 30;
         case "md":
-          return 40;
+          return 30;
         case "lg":
-          return 45;
+          return 30;
         case "xl":
           return 50;
       }

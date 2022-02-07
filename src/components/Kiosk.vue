@@ -1,11 +1,10 @@
 <template>
-  <!-- <KioskCall v-if="false" /> -->
   <v-card
-    style="height: 100%; width: 100%; border: solid 7px grey"
+    style="height: 100%; width: 100%; border: solid 7px grey; z-index: 1"
     class="rounded-lg kiosk"
   >
     <v-card-text class="">
-      <v-row justify="space-around" no-gutters>
+      <v-row style="" justify="space-around" no-gutters>
         <v-col cols="4" class="text-center" @click="$emit('notif', 'ok')">
           <v-icon :size="emojiFontSize" color="green"
             >mdi-emoticon-happy</v-icon
@@ -54,6 +53,7 @@ import KioskCall from "./KioskCall.vue";
 
 export default {
   name: "Kiosk",
+  props: ["isCalling"],
   components: { KioskCall },
   computed: {
     emojiFontSize() {

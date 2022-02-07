@@ -1,5 +1,6 @@
 <template>
   <v-container class="" fluid>
+    <!-- little screens -->
     <v-row v-if="true" justify="space-around" class="hidden-md-and-up">
       <v-col md="12" sm="12" cols="12" class="">
         <Kiosk @call="call" @sos="sos" @notif="notif" />
@@ -22,8 +23,8 @@
       </v-col>
     </v-row>
 
-    <v-row justify="center" class="hidden-sm-and-down text-center">
-      <v-col  class="">
+    <v-row justify="space-around" class="hidden-sm-and-down text-center ">
+      <v-col cols="2" class="">
         <Phone
           v-if="true"
           :notif="phone1.notif"
@@ -32,10 +33,10 @@
           :call="phone1.call"
         />
       </v-col>
-      <v-col xl="7" lg="7" md="7" class="">
-        <Kiosk @call="call" @sos="sos" @notif="notif" />
+      <v-col xl="7" lg="7" md="7" class="pa-0">
+        <Kiosk :isCalling="true" @call="call" @sos="sos" @notif="notif" />
       </v-col>
-      <v-col  class="">
+      <v-col cols="2" class="">
         <Phone
           v-if="true"
           :notif="phone2.notif"
@@ -66,7 +67,7 @@ export default {
       notifText: "Salut, j'ai un souci",
       phone1: {
         notif: false,
-        call: false,
+        call: true,
       },
       phone2: {
         notif: false,
