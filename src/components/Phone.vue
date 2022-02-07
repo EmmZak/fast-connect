@@ -33,6 +33,7 @@
         </v-col>
 
         <SOSNotification v-if="this.sosNotif" />
+        <div class="pa-1"></div>
         <Notification v-if="this.notif" :message="notifText" />
       </v-row>
       <v-row v-if="true" class="fill-height">
