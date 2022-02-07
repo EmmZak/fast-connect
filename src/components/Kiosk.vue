@@ -49,7 +49,7 @@
 
 <script>
 /* eslint-disable vue/no-unused-components */
-import KioskCall from "./KioskCall.vue";
+import KioskCall from "./call/KioskCall.vue";
 
 export default {
   name: "Kiosk",

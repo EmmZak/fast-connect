@@ -45,9 +45,9 @@
 
 <script>
 /* eslint-disable vue/no-unused-components */
-import SOSNotification from "./SOSNotification.vue";
-import Notification from "./Notification.vue";
-import PhoneCall from "./PhoneCall.vue";
+import SOSNotification from "./notif/SOSNotification.vue";
+import Notification from "./notif/Notification.vue";
+import PhoneCall from "./call/PhoneCall.vue";
 
 export default {
   name: "Phone",
