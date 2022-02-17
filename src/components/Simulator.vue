@@ -88,7 +88,7 @@ export default {
         this.phone2.call = true;
       }
 
-      let audio = new Audio(require("./../../public/call-12.mp3"));
+      let audio = new Audio(require("./../../public/call-5.mp3"));
       audio.play();
 
       setTimeout(() => {
@@ -98,7 +98,7 @@ export default {
           this.phone2.call = false;
         }
         this.block = false;
-      }, 12000);
+      }, 5000);
     },
     sos() {
       if (this.block) {
