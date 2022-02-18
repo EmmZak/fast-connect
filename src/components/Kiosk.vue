@@ -17,10 +17,16 @@
     </v-card-text>
     <v-card-actions class="">
       <v-row justify="space-around" align="center" no-gutters>
+        <!-- call 1 -->
         <v-col cols="3" class="text-center" @click="$emit('call', 'Emmanuel')">
-          <v-icon style="font-size: 8vw">mdi-phone</v-icon>
-          <div class="text-body-1">
-            <div class="title-font">Emmanuel</div>
+          <v-img
+            style="margin-left: auto; margin-right: auto"
+            :width="imageSize"
+            :src="require(`@/assets/doc.png`)"
+          ></v-img>
+          <!-- <v-icon  style="font-size: 8vw">mdi-doctor</v-icon> -->
+          <div class="title-font" :style="{ fontSize: nameFontSize + 'px' }">
+            Généraliste
           </div>
         </v-col>
         <v-col cols="3" class="text-center" @click="$emit('sos')">
@@ -36,10 +42,21 @@
             </div>
           </div>
         </v-col>
-        <v-col cols="3" class="text-center" @click="$emit('call', 'Alexandre')">
-          <v-icon style="font-size: 8vw">mdi-phone</v-icon>
-          <div class="text-body-1">
-            <div class="title-font">Alexandre</div>
+        <!-- call 2 -->
+        <v-col
+          cols="3"
+          class="text-center justify-center "
+          @click="$emit('call', 'Alexandre')"
+        >
+          <v-img
+            class=""
+            style="margin-left: auto; margin-right: auto"
+            :width="imageSize"
+            :src="require(`@/assets/fam.png`)"
+          ></v-img>
+          <!-- <v-icon style="font-size: 8vw">mdi-home-heart</v-icon> -->
+          <div class="title-font" :style="{ fontSize: nameFontSize + 'px' }">
+            Famille
           </div>
         </v-col>
       </v-row>
@@ -83,6 +100,36 @@ export default {
           return 50;
         case "xl":
           return 40;
+      }
+      return null;
+    },
+    nameFontSize() {
+      switch (this.$vuetify.breakpoint.name) {
+        case "xs":
+          return 12;
+        case "sm":
+          return 16;
+        case "md":
+          return 18;
+        case "lg":
+          return 20;
+        case "xl":
+          return 24;
+      }
+      return null;
+    },
+    imageSize() {
+      switch (this.$vuetify.breakpoint.name) {
+        case "xs":
+          return 50;
+        case "sm":
+          return 75;
+        case "md":
+          return 75;
+        case "lg":
+          return 100;
+        case "xl":
+          return 125;
       }
       return null;
     },
